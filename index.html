@@ -18,9 +18,9 @@
         }
 
         body {
-            background: #0b1219;
             font-family: 'Cairo', 'Segoe UI', sans-serif;
-            color: #eaeef3;
+            background: #f3efe8;
+            color: #2c3e4e;
             padding: 2rem 1.5rem;
             min-height: 100vh;
             display: flex;
@@ -31,13 +31,13 @@
         .container {
             max-width: 1200px;
             width: 100%;
-            background: linear-gradient(145deg, #141e2b 0%, #0d1622 100%);
-            border-radius: 60px 60px 50px 50px;
+            background: #ffffff;
+            border-radius: 70px 70px 50px 50px;
             padding: 2.8rem 3.2rem;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 215, 150, 0.08);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(200, 180, 160, 0.2);
             backdrop-filter: blur(2px);
-            border: 1px solid rgba(255, 215, 150, 0.12);
             transition: 0.3s;
+            border: 1px solid rgba(255, 215, 180, 0.3);
         }
 
         /* ===== HEADER / HOME ===== */
@@ -47,7 +47,7 @@
             align-items: center;
             justify-content: space-between;
             padding-bottom: 2.4rem;
-            border-bottom: 1px solid rgba(255, 215, 150, 0.15);
+            border-bottom: 2px solid #f0e8df;
             margin-bottom: 3rem;
         }
 
@@ -61,17 +61,16 @@
         .avatar {
             width: 120px;
             height: 120px;
-            background: radial-gradient(circle at 30% 30%, #d4b48c, #a77b5a);
+            background: linear-gradient(145deg, #f7efe6, #ece2d6);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 4.2rem;
-            color: #1f2a36;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 0 3px rgba(212, 180, 140, 0.25);
-            border: 2px solid #e4c9a7;
+            color: #b5957a;
+            box-shadow: 0 12px 30px rgba(160, 130, 110, 0.12), 0 0 0 3px #f6ede4;
+            border: 2px solid #e6d6c6;
             flex-shrink: 0;
-            transition: 0.3s;
         }
 
         .avatar img {
@@ -85,10 +84,9 @@
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             font-size: 3.2rem;
-            color: #f3e3d0;
+            color: #3d2e24;
             letter-spacing: -0.5px;
             line-height: 1.2;
-            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
 
         .name-title h1 small {
@@ -96,48 +94,45 @@
             font-family: 'Cairo', sans-serif;
             font-weight: 300;
             font-size: 1.3rem;
-            color: #cebcab;
+            color: #7a6a5c;
             letter-spacing: 1px;
             margin-top: 0.2rem;
-            opacity: 0.9;
         }
 
         .gold-badge {
-            background: rgba(212, 180, 140, 0.12);
-            backdrop-filter: blur(4px);
+            background: #f5ede4;
             padding: 0.5rem 1.8rem;
             border-radius: 60px;
             font-weight: 600;
             font-size: 0.95rem;
-            color: #e4c9a7;
-            border: 1px solid rgba(212, 180, 140, 0.25);
+            color: #5f4c3a;
+            border: 1px solid #e6d6c6;
             display: inline-block;
             margin-top: 0.6rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
         .gold-badge i {
             margin-left: 8px;
-            color: #dbbd96;
+            color: #b5957a;
         }
 
         .tagline {
-            background: rgba(255, 215, 150, 0.05);
+            background: #f8f3ed;
             padding: 1rem 2rem;
             border-radius: 80px;
-            border-right: 6px solid #dbbd96;
+            border-right: 6px solid #d4b8a2;
             font-size: 1.05rem;
-            color: #ded3c5;
+            color: #3d342e;
             max-width: 700px;
-            backdrop-filter: blur(2px);
-            box-shadow: inset 0 2px 10px rgba(0,0,0,0.2);
-            border: 1px solid rgba(212, 180, 140, 0.12);
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);
+            border: 1px solid #eee3d9;
             font-weight: 300;
             line-height: 1.8;
         }
 
         .tagline i {
-            color: #dbbd96;
+            color: #b5957a;
             margin-left: 10px;
             opacity: 0.8;
         }
@@ -151,36 +146,34 @@
             font-family: 'Playfair Display', serif;
             font-weight: 600;
             font-size: 2.2rem;
-            color: #f3e3d0;
-            border-right: 7px solid #dbbd96;
+            color: #3d2e24;
+            border-right: 7px solid #d4b8a2;
             padding-right: 1.5rem;
             margin-bottom: 2rem;
             display: flex;
             align-items: center;
             gap: 1rem;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
         }
 
         .section-title i {
-            color: #dbbd96;
+            color: #b5957a;
             font-size: 2rem;
             opacity: 0.9;
         }
 
         .card-lux {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(6px);
+            background: #fcf9f6;
             border-radius: 40px;
             padding: 1.8rem 2.4rem;
-            border: 1px solid rgba(212, 180, 140, 0.12);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid #eee3d9;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.02);
             transition: 0.25s;
         }
 
         .card-lux:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(212, 180, 140, 0.25);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            background: #ffffff;
+            border-color: #dccfc4;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04);
         }
 
         .grid-2 {
@@ -193,34 +186,33 @@
             font-family: 'Playfair Display', serif;
             font-weight: 600;
             font-size: 1.5rem;
-            color: #ecdac9;
+            color: #4d3d30;
             margin-bottom: 1.2rem;
-            border-bottom: 1px dashed rgba(212, 180, 140, 0.2);
+            border-bottom: 1px dashed #e6d6c6;
             padding-bottom: 0.6rem;
         }
 
         .skill-tag {
             display: inline-block;
-            background: rgba(212, 180, 140, 0.08);
+            background: #f4ede6;
             padding: 0.3rem 1.4rem;
             border-radius: 50px;
             font-size: 0.9rem;
             margin: 0.3rem 0.3rem 0.3rem 0;
-            color: #e2d2c0;
-            border: 1px solid rgba(212, 180, 140, 0.15);
-            backdrop-filter: blur(2px);
+            color: #4d3d30;
+            border: 1px solid #e6d6c6;
             font-weight: 300;
             letter-spacing: 0.3px;
         }
 
         .skill-tag i {
             margin-left: 6px;
-            color: #dbbd96;
+            color: #b5957a;
             font-size: 0.75rem;
         }
 
         .project-item {
-            border-bottom: 1px solid rgba(212, 180, 140, 0.1);
+            border-bottom: 1px solid #f0e8df;
             padding-bottom: 1.8rem;
             margin-bottom: 1.8rem;
         }
@@ -235,7 +227,7 @@
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             font-size: 1.4rem;
-            color: #f3e3d0;
+            color: #3d2e24;
             letter-spacing: 0.3px;
         }
 
@@ -244,12 +236,12 @@
             flex-wrap: wrap;
             gap: 0.8rem 2.5rem;
             font-size: 0.9rem;
-            color: #b8aa9b;
+            color: #7a6a5c;
             margin: 0.5rem 0 0.8rem;
         }
 
         .project-meta i {
-            color: #dbbd96;
+            color: #b5957a;
             width: 1.4rem;
             margin-left: 4px;
         }
@@ -263,13 +255,13 @@
             padding-right: 1.8rem;
             position: relative;
             margin-bottom: 0.45rem;
-            color: #dad0c5;
+            color: #4d4036;
             font-weight: 300;
         }
 
         .list-bullet li::before {
             content: "✦";
-            color: #dbbd96;
+            color: #b5957a;
             position: absolute;
             right: 0;
             font-size: 1.2rem;
@@ -281,11 +273,10 @@
             display: flex;
             flex-wrap: wrap;
             gap: 1.5rem 3rem;
-            background: rgba(255, 215, 150, 0.04);
+            background: #f8f3ed;
             border-radius: 60px;
             padding: 1.2rem 2.2rem;
-            border: 1px solid rgba(212, 180, 140, 0.12);
-            backdrop-filter: blur(4px);
+            border: 1px solid #eee3d9;
         }
 
         .contact-item {
@@ -293,18 +284,18 @@
             align-items: center;
             gap: 0.8rem;
             font-size: 1.05rem;
-            color: #e2d2c0;
+            color: #3d342e;
         }
 
         .contact-item i {
-            color: #dbbd96;
+            color: #b5957a;
             font-size: 1.4rem;
             width: 2rem;
             text-align: center;
         }
 
         .contact-item a {
-            color: #eedccc;
+            color: #4d3d30;
             text-decoration: none;
             font-weight: 400;
             border-bottom: 1px solid transparent;
@@ -312,22 +303,22 @@
         }
 
         .contact-item a:hover {
-            border-bottom: 1px solid #dbbd96;
-            color: #f3e3d0;
+            border-bottom: 1px solid #b5957a;
+            color: #3d2e24;
         }
 
         .footer-note {
             margin-top: 3rem;
             text-align: center;
             font-size: 0.85rem;
-            color: #7a6e62;
-            border-top: 1px solid rgba(212, 180, 140, 0.08);
+            color: #a39486;
+            border-top: 1px solid #eee3d9;
             padding-top: 2rem;
             letter-spacing: 1px;
         }
 
         .footer-note i {
-            color: #b1977e;
+            color: #b5957a;
             margin-left: 6px;
         }
 
@@ -424,19 +415,19 @@
     <div class="section" id="about">
         <div class="section-title"><i class="fas fa-crown"></i> نبذة عني — About</div>
         <div class="card-lux">
-            <p style="font-size:1.15rem; margin-bottom: 1rem; color: #eae2d8; font-weight:300;">
-                <strong style="color:#f3e3d0; font-weight:600;">من أنا؟</strong><br>
+            <p style="font-size:1.15rem; margin-bottom: 1rem; color: #3d342e; font-weight:300;">
+                <strong style="color:#3d2e24; font-weight:600;">من أنا؟</strong><br>
                 مهندس ومنسق مشاريع وإداري، أمتلك خبرة في تنظيم الأعمال، متابعة تنفيذ المهام والمشاريع، إعداد التقارير والمراسلات، والتنسيق مع الفرق والشركاء.
             </p>
             <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; margin-top: 1rem;">
                 <div>
-                    <i class="fas fa-graduation-cap" style="color:#dbbd96; margin-left: 0.6rem;"></i>
-                    <strong style="color:#ecdac9;">الدراسة والمجال:</strong>
-                    <div style="color:#d6c9bc; font-weight:300;">بكالوريوس هندسة مدنية — جامعة فلسطين.</div>
+                    <i class="fas fa-graduation-cap" style="color:#b5957a; margin-left: 0.6rem;"></i>
+                    <strong style="color:#4d3d30;">الدراسة والمجال:</strong>
+                    <div style="color:#5f4c3a; font-weight:300;">بكالوريوس هندسة مدنية — جامعة فلسطين.</div>
                 </div>
                 <div>
-                    <i class="fas fa-lightbulb" style="color:#dbbd96; margin-left: 0.6rem;"></i>
-                    <strong style="color:#ecdac9;">الخبرات والاهتمامات:</strong>
+                    <i class="fas fa-lightbulb" style="color:#b5957a; margin-left: 0.6rem;"></i>
+                    <strong style="color:#4d3d30;">الخبرات والاهتمامات:</strong>
                     <ul class="list-bullet" style="margin-top:0.4rem;">
                         <li>تنسيق وإدارة المشاريع.</li>
                         <li>التخطيط ومتابعة تنفيذ المشاريع.</li>
@@ -454,7 +445,7 @@
         <div class="section-title"><i class="fas fa-gem"></i> المهارات — Skills</div>
         <div class="grid-2">
             <div class="card-lux">
-                <h3><i class="fas fa-check-circle" style="color:#dbbd96;"></i> المهارات الأساسية</h3>
+                <h3><i class="fas fa-check-circle" style="color:#b5957a;"></i> المهارات الأساسية</h3>
                 <div>
                     <span class="skill-tag"><i class="fas fa-star"></i> Strategic Planning</span>
                     <span class="skill-tag"><i class="fas fa-star"></i> Project Management</span>
@@ -465,7 +456,7 @@
                 </div>
             </div>
             <div class="card-lux">
-                <h3><i class="fas fa-code" style="color:#dbbd96;"></i> البرامج والأدوات</h3>
+                <h3><i class="fas fa-code" style="color:#b5957a;"></i> البرامج والأدوات</h3>
                 <div>
                     <span class="skill-tag"><i class="fas fa-check"></i> Microsoft Office</span>
                     <span class="skill-tag"><i class="fas fa-check"></i> Microsoft Project</span>
