@@ -1,538 +1,636 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Ameer Al Jorf | الموقع الشخصي</title>
-    <!-- Google Fonts: Playfair Display + Cairo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>أمير الجرف | Ameer Al Jorf</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,600&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet" />
+
     <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
     <style>
+        :root {
+            --bg-color: #0b1118;
+            --card-bg: rgba(22, 31, 45, 0.75);
+            --card-border: rgba(212, 180, 140, 0.2);
+            --accent-gold: #d4b48c;
+            --accent-glow: rgba(212, 180, 140, 0.15);
+            --text-main: #f0f4f8;
+            --text-muted: #9aa8b6;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Cairo', 'Segoe UI', sans-serif;
-            background: #f3efe8;
-            color: #2c3e4e;
-            padding: 2rem 1.5rem;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: var(--bg-color);
+            background-image:
+                radial-gradient(circle at 80% 20%, rgba(212, 180, 140, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 20% 80%, rgba(13, 22, 34, 0.9) 0%, transparent 50%),
+                linear-gradient(135deg, #0a1017 0%, #0d1722 100%);
+            background-attachment: fixed;
+            font-family: 'Cairo', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
         }
 
-        .container {
-            max-width: 1200px;
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
             width: 100%;
-            background: #ffffff;
-            border-radius: 70px 70px 50px 50px;
-            padding: 2.8rem 3.2rem;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(200, 180, 160, 0.2);
-            backdrop-filter: blur(2px);
-            transition: 0.3s;
-            border: 1px solid rgba(255, 215, 180, 0.3);
+            background: rgba(11, 17, 24, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* ===== HEADER / HOME ===== */
-        .header {
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
             display: flex;
-            flex-wrap: wrap;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 7rem 1.5rem 3rem;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-bottom: 2.4rem;
-            border-bottom: 2px solid #f0e8df;
+            gap: 3rem;
+            padding: 3.5rem 2.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 28px;
+            backdrop-filter: blur(10px);
             margin-bottom: 3rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            position: relative;
         }
 
-        .profile {
-            display: flex;
+        .hero-content {
+            flex: 1;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
             align-items: center;
-            gap: 2rem;
+            gap: 0.5rem;
+            background: var(--accent-glow);
+            color: var(--accent-gold);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(212, 180, 140, 0.3);
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            color: #d1dbe5;
+            margin-bottom: 2rem;
+            max-width: 650px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
-        .avatar {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(145deg, #f7efe6, #ece2d6);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4.2rem;
-            color: #b5957a;
-            box-shadow: 0 12px 30px rgba(160, 130, 110, 0.12), 0 0 0 3px #f6ede4;
-            border: 2px solid #e6d6c6;
-            flex-shrink: 0;
-        }
-
-        .avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .name-title h1 {
-            font-family: 'Playfair Display', serif;
+        .btn-primary {
+            background: var(--accent-gold);
+            color: #0b1118;
+            padding: 0.8rem 1.8rem;
+            border-radius: 12px;
+            text-decoration: none;
             font-weight: 700;
-            font-size: 3.2rem;
-            color: #3d2e24;
-            letter-spacing: -0.5px;
-            line-height: 1.2;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .name-title h1 small {
-            display: block;
-            font-family: 'Cairo', sans-serif;
-            font-weight: 300;
-            font-size: 1.3rem;
-            color: #7a6a5c;
-            letter-spacing: 1px;
-            margin-top: 0.2rem;
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 180, 140, 0.3);
         }
 
-        .gold-badge {
-            background: #f5ede4;
-            padding: 0.5rem 1.8rem;
-            border-radius: 60px;
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-main);
+            padding: 0.8rem 1.8rem;
+            border-radius: 12px;
+            text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
-            color: #5f4c3a;
-            border: 1px solid #e6d6c6;
-            display: inline-block;
-            margin-top: 0.6rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            border: 1px solid var(--card-border);
+            transition: 0.3s;
         }
 
-        .gold-badge i {
-            margin-left: 8px;
-            color: #b5957a;
+        .btn-secondary:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
         }
 
-        .tagline {
-            background: #f8f3ed;
-            padding: 1rem 2rem;
-            border-radius: 80px;
-            border-right: 6px solid #d4b8a2;
-            font-size: 1.05rem;
-            color: #3d342e;
-            max-width: 700px;
-            box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);
-            border: 1px solid #eee3d9;
-            font-weight: 300;
-            line-height: 1.8;
+        /* ===== PORTRAIT POP-OUT ===== */
+        .hero-avatar-wrapper {
+            position: relative;
+            flex-shrink: 0;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            margin-top: 15px;
         }
 
-        .tagline i {
-            color: #b5957a;
-            margin-left: 10px;
-            opacity: 0.8;
+        .portrait-backdrop {
+            width: 220px;
+            height: 250px;
+            background: linear-gradient(180deg, rgba(212, 180, 140, 0.2) 0%, rgba(13, 22, 34, 0.9) 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 120px 120px 24px 24px;
+            position: relative;
+            overflow: visible !important;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6), 0 12px 30px rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
         }
 
-        /* ===== SECTIONS ===== */
-        .section {
-            margin-bottom: 3.5rem;
+        .hero-avatar {
+            width: 100%;
+            max-width: none;
+            height: auto;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%) scale(1.12);
+            transform-origin: bottom center;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
+            pointer-events: none;
+        }
+
+        /* ===== COMMON SECTIONS ===== */
+        .section-header {
+            margin-bottom: 2rem;
+            margin-top: 3.5rem;
         }
 
         .section-title {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            font-size: 2.2rem;
-            color: #3d2e24;
-            border-right: 7px solid #d4b8a2;
-            padding-right: 1.5rem;
-            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
         .section-title i {
-            color: #b5957a;
-            font-size: 2rem;
-            opacity: 0.9;
+            color: var(--accent-gold);
         }
 
         .card-lux {
-            background: #fcf9f6;
-            border-radius: 40px;
-            padding: 1.8rem 2.4rem;
-            border: 1px solid #eee3d9;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.02);
-            transition: 0.25s;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(8px);
         }
 
-        .card-lux:hover {
-            background: #ffffff;
-            border-color: #dccfc4;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04);
+        /* ===== ABOUT SECTION ===== */
+        .about-content p {
+            font-size: 1.1rem;
+            color: #e2ebf3;
+            margin-bottom: 1.5rem;
         }
 
-        .grid-2 {
+        .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
         }
 
-        .card-lux h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            font-size: 1.5rem;
-            color: #4d3d30;
-            margin-bottom: 1.2rem;
-            border-bottom: 1px dashed #e6d6c6;
-            padding-bottom: 0.6rem;
-        }
-
-        .skill-tag {
-            display: inline-block;
-            background: #f4ede6;
-            padding: 0.3rem 1.4rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin: 0.3rem 0.3rem 0.3rem 0;
-            color: #4d3d30;
-            border: 1px solid #e6d6c6;
-            font-weight: 300;
-            letter-spacing: 0.3px;
-        }
-
-        .skill-tag i {
-            margin-left: 6px;
-            color: #b5957a;
-            font-size: 0.75rem;
-        }
-
-        .project-item {
-            border-bottom: 1px solid #f0e8df;
-            padding-bottom: 1.8rem;
-            margin-bottom: 1.8rem;
-        }
-
-        .project-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .project-title {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 1.4rem;
-            color: #3d2e24;
-            letter-spacing: 0.3px;
-        }
-
-        .project-meta {
+        .about-item h4 {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem 2.5rem;
-            font-size: 0.9rem;
-            color: #7a6a5c;
-            margin: 0.5rem 0 0.8rem;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .project-meta i {
-            color: #b5957a;
-            width: 1.4rem;
-            margin-left: 4px;
-        }
-
-        .list-bullet {
+        .about-list {
             list-style: none;
-            padding-right: 0.5rem;
         }
 
-        .list-bullet li {
-            padding-right: 1.8rem;
+        .about-list li {
             position: relative;
-            margin-bottom: 0.45rem;
-            color: #4d4036;
-            font-weight: 300;
+            padding-right: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
         }
 
-        .list-bullet li::before {
+        .about-list li::before {
             content: "✦";
-            color: #b5957a;
+            color: var(--accent-gold);
+            position: absolute;
+            right: 0;
+            font-size: 0.8rem;
+        }
+
+        /* ===== SKILLS GRID ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            display: inline-block;
+            margin: 0.25rem;
+            color: #d1dbe5;
+        }
+
+        /* ===== PROJECTS GRID ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: rgba(212, 180, 140, 0.4);
+            transform: translateY(-4px);
+        }
+
+        .project-badge {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+
+        .project-role {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .project-list {
+            list-style: none;
+        }
+
+        .project-list li {
+            position: relative;
+            padding-right: 1.2rem;
+            font-size: 0.9rem;
+            color: #c4d0dc;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-list li::before {
+            content: "•";
+            color: var(--accent-gold);
             position: absolute;
             right: 0;
             font-size: 1.2rem;
-            opacity: 0.7;
+            line-height: 1;
         }
 
-        /* CONTACT */
+        /* ===== CONTACT ===== */
+        .contact-card {
+            background: linear-gradient(135deg, rgba(212, 180, 140, 0.1) 0%, rgba(11, 17, 24, 0.8) 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 3.5rem;
+        }
+
         .contact-grid {
             display: flex;
+            justify-content: center;
             flex-wrap: wrap;
-            gap: 1.5rem 3rem;
-            background: #f8f3ed;
-            border-radius: 60px;
-            padding: 1.2rem 2.2rem;
-            border: 1px solid #eee3d9;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            font-size: 1.05rem;
-            color: #3d342e;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .contact-item i {
-            color: #b5957a;
-            font-size: 1.4rem;
-            width: 2rem;
-            text-align: center;
+            color: var(--accent-gold);
+            font-size: 1.2rem;
         }
 
         .contact-item a {
-            color: #4d3d30;
+            color: var(--text-main);
             text-decoration: none;
-            font-weight: 400;
-            border-bottom: 1px solid transparent;
-            transition: 0.2s;
+            font-weight: 600;
         }
 
-        .contact-item a:hover {
-            border-bottom: 1px solid #b5957a;
-            color: #3d2e24;
-        }
-
-        .footer-note {
-            margin-top: 3rem;
+        footer {
             text-align: center;
+            padding: 2.5rem 1rem;
+            color: var(--text-muted);
             font-size: 0.85rem;
-            color: #a39486;
-            border-top: 1px solid #eee3d9;
-            padding-top: 2rem;
-            letter-spacing: 1px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 4rem;
         }
 
-        .footer-note i {
-            color: #b5957a;
-            margin-left: 6px;
-        }
+        @media (max-width: 868px) {
+            .hero-section {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 800px) {
-            .container {
-                padding: 1.8rem 1.2rem;
-                border-radius: 40px;
+            .hero-actions {
+                justify-content: center;
             }
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            .profile {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .avatar {
-                width: 90px;
-                height: 90px;
-                font-size: 3rem;
-            }
-            .name-title h1 {
-                font-size: 2.4rem;
-            }
-            .tagline {
-                font-size: 0.95rem;
-                padding: 0.8rem 1.4rem;
-            }
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-            .contact-grid {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-                border-radius: 40px;
-                padding: 1.2rem 1.8rem;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
 
-        @media (max-width: 480px) {
-            body {
-                padding: 0.8rem;
-            }
-            .container {
-                padding: 1.2rem 0.8rem;
-                border-radius: 30px;
-            }
-            .name-title h1 {
-                font-size: 2rem;
-            }
-            .avatar {
-                width: 75px;
-                height: 75px;
-                font-size: 2.5rem;
-            }
-            .card-lux {
-                padding: 1.2rem 1.2rem;
-            }
-            .project-meta {
-                gap: 0.3rem 1.2rem;
-                font-size: 0.8rem;
+            .nav-links {
+                display: none;
             }
         }
     </style>
 </head>
+
 <body>
-<div class="container">
 
-    <!-- ========== HOME ========== -->
-    <div class="header" id="home">
-        <div class="profile">
-            <div class="avatar">
-                <i class="fas fa-user-astronaut"></i>
-                <!-- لو حابب تضيف صورتك: <img src="pic.jpg" alt="Ameer"> -->
-            </div>
-            <div class="name-title">
-                <h1>Ameer Al Jorf <br><small>أمير فريد حسين الجرف</small></h1>
-                <div class="gold-badge"><i class="fas fa-briefcase"></i> Project Engineer · Coordinator · Admin</div>
-            </div>
-        </div>
-        <div class="tagline">
-            <i class="fas fa-quote-right"></i>
-            مهندس ومنسق مشاريع وإداري، بخبرة في إدارة ومتابعة المشاريع، التخطيط، إعداد التقارير، والتواصل مع الفرق والشركاء، مع خلفية في الهندسة المدنية والمعمارية.
-        </div>
-    </div>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-logo">AMEER AL JORF</div>
+        <ul class="nav-links">
+            <li><a href="#about">عني</a></li>
+            <li><a href="#skills">المهارات</a></li>
+            <li><a href="#projects">المشاريع</a></li>
+            <li><a href="#contact">التواصل</a></li>
+        </ul>
+    </nav>
 
-    <!-- ========== ABOUT ========== -->
-    <div class="section" id="about">
-        <div class="section-title"><i class="fas fa-crown"></i> نبذة عني — About</div>
-        <div class="card-lux">
-            <p style="font-size:1.15rem; margin-bottom: 1rem; color: #3d342e; font-weight:300;">
-                <strong style="color:#3d2e24; font-weight:600;">من أنا؟</strong><br>
-                مهندس ومنسق مشاريع وإداري، أمتلك خبرة في تنظيم الأعمال، متابعة تنفيذ المهام والمشاريع، إعداد التقارير والمراسلات، والتنسيق مع الفرق والشركاء.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; margin-top: 1rem;">
-                <div>
-                    <i class="fas fa-graduation-cap" style="color:#b5957a; margin-left: 0.6rem;"></i>
-                    <strong style="color:#4d3d30;">الدراسة والمجال:</strong>
-                    <div style="color:#5f4c3a; font-weight:300;">بكالوريوس هندسة مدنية — جامعة فلسطين.</div>
+    <div class="wrapper">
+
+        <!-- 🏠 HOME / HERO SECTION -->
+        <section class="hero-section" id="home">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-briefcase"></i> Project Engineer | Coordinator | Administrator
                 </div>
-                <div>
-                    <i class="fas fa-lightbulb" style="color:#b5957a; margin-left: 0.6rem;"></i>
-                    <strong style="color:#4d3d30;">الخبرات والاهتمامات:</strong>
-                    <ul class="list-bullet" style="margin-top:0.4rem;">
-                        <li>تنسيق وإدارة المشاريع.</li>
-                        <li>التخطيط ومتابعة تنفيذ المشاريع.</li>
-                        <li>تطوير المشاريع والأفكار الريادية.</li>
-                        <li>العلاقات والتواصل مع الفرق والشركاء.</li>
-                        <li>الهندسة المدنية والمعمارية.</li>
-                    </ul>
+                <h1 class="hero-title">Ameer Al Jorf</h1>
+                <p class="hero-subtitle">أمير فريد حسين الجرف</p>
+                <p class="hero-description">
+                    مهندس ومنسق مشاريع وإداري، بخبرة في إدارة ومتابعة المشاريع، التخطيط، إعداد التقارير، والتواصل مع
+                    الفرق والشركاء، مع خلفية في الهندسة المدنية والهندسة المعمارية.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary"><i class="fas fa-envelope"></i> تواصل معي</a>
+                    <a href="#projects" class="btn-secondary">عرض المشاريع</a>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- ========== SKILLS ========== -->
-    <div class="section" id="skills">
-        <div class="section-title"><i class="fas fa-gem"></i> المهارات — Skills</div>
-        <div class="grid-2">
-            <div class="card-lux">
-                <h3><i class="fas fa-check-circle" style="color:#b5957a;"></i> المهارات الأساسية</h3>
-                <div>
-                    <span class="skill-tag"><i class="fas fa-star"></i> Strategic Planning</span>
-                    <span class="skill-tag"><i class="fas fa-star"></i> Project Management</span>
-                    <span class="skill-tag"><i class="fas fa-star"></i> Leadership & Team</span>
-                    <span class="skill-tag"><i class="fas fa-star"></i> Analysis & Decision</span>
-                    <span class="skill-tag"><i class="fas fa-star"></i> Effective Communication</span>
-                    <span class="skill-tag"><i class="fas fa-star"></i> Audience Analysis</span>
+            <div class="hero-avatar-wrapper">
+                <div class="portrait-backdrop">
+                    <img src="images/a.png" alt="أمير الجرف" class="hero-avatar" />
                 </div>
             </div>
-            <div class="card-lux">
-                <h3><i class="fas fa-code" style="color:#b5957a;"></i> البرامج والأدوات</h3>
-                <div>
-                    <span class="skill-tag"><i class="fas fa-check"></i> Microsoft Office</span>
-                    <span class="skill-tag"><i class="fas fa-check"></i> Microsoft Project</span>
-                    <span class="skill-tag"><i class="fas fa-check"></i> Google Workspace</span>
-                    <span class="skill-tag"><i class="fas fa-check"></i> Power BI</span>
-                    <span class="skill-tag"><i class="fas fa-check"></i> Trello</span>
-                    <span class="skill-tag"><i class="fas fa-check"></i> Asana</span>
-                    <span class="skill-tag"><i class="fas fa-check"></i> Slack</span>
+        </section>
+
+        <!-- 👤 ABOUT SECTION -->
+        <section id="about">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-user-check"></i> نبذة عني</h2>
+            </div>
+            <div class="card-lux about-content">
+                <p>
+                    <strong>من أنا؟</strong><br>
+                    مهندس ومنسق مشاريع وإداري، أمتلك خبرة في تنظيم الأعمال، متابعة تنفيذ المهام والمشاريع، إعداد
+                    التقارير والمراسلات، والتنسيق مع الفرق والشركاء.
+                </p>
+                <div class="about-grid">
+                    <div class="about-item">
+                        <h4><i class="fas fa-graduation-cap"></i> الدراسة والمجال</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">بكالوريوس هندسة مدنية — جامعة فلسطين.
+                        </p>
+                    </div>
+                    <div class="about-item">
+                        <h4><i class="fas fa-star"></i> الخبرات والاهتمامات</h4>
+                        <ul class="about-list">
+                            <li>تنسيق وإدارة المشاريع.</li>
+                            <li>التخطيط ومتابعة تنفيذ المشاريع.</li>
+                            <li>تطوير المشاريع والأفكار الريادية.</li>
+                            <li>العلاقات والتواصل مع الفرق والشركاء.</li>
+                            <li>الهندسة المدنية والمعمارية.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- ========== PROJECTS ========== -->
-    <div class="section" id="projects">
-        <div class="section-title"><i class="fas fa-trophy"></i> الأعمال / المشاريع — Projects</div>
-
-        <div class="project-item">
-            <div class="project-title">1. تنسيق مشاريع مؤسسة شِيم</div>
-            <div class="project-meta">
-                <span><i class="fas fa-user-tie"></i> Project Coordinator</span>
-                <span><i class="fas fa-calendar-alt"></i> يناير 2022 – مستمر</span>
+        <!-- 🛠️ SKILLS SECTION -->
+        <section id="skills">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-layer-group"></i> المهارات والخبرات</h2>
             </div>
-            <ul class="list-bullet">
-                <li>تنسيق ومتابعة تنفيذ الأنشطة والمشاريع.</li>
-                <li>إعداد المراسلات والتقارير.</li>
-                <li>متابعة سير العمل وضمان إنجاز المهام في الوقت المحدد.</li>
-                <li>تنظيم وثائق المشاريع والعقود والتقارير.</li>
-            </ul>
-        </div>
-
-        <div class="project-item">
-            <div class="project-title">2. تطوير وتنسيق المشاريع الريادية — Future Foundation</div>
-            <div class="project-meta">
-                <span><i class="fas fa-user-tie"></i> Entrepreneurial Coordinator & Developer</span>
-                <span><i class="fas fa-calendar-alt"></i> مايو 2023 – ديسمبر 2025</span>
+            <div class="skills-grid">
+                <div class="card-lux">
+                    <h3 style="color: var(--accent-gold); margin-bottom: 1rem;"><i class="fas fa-chart-line"></i>
+                        المهارات الأساسية</h3>
+                    <div>
+                        <span class="tag">Strategic Planning</span>
+                        <span class="tag">Project Management</span>
+                        <span class="tag">Leadership & Team Management</span>
+                        <span class="tag">Analysis & Decision-Making</span>
+                        <span class="tag">Effective Communication</span>
+                        <span class="tag">Audience Analysis</span>
+                    </div>
+                </div>
+                <div class="card-lux">
+                    <h3 style="color: var(--accent-gold); margin-bottom: 1rem;"><i class="fas fa-laptop-code"></i>
+                        البرامج والأدوات</h3>
+                    <div>
+                        <span class="tag">Microsoft Office</span>
+                        <span class="tag">Microsoft Project</span>
+                        <span class="tag">Google Workspace</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Trello</span>
+                        <span class="tag">Asana</span>
+                        <span class="tag">Slack</span>
+                    </div>
+                </div>
             </div>
-            <ul class="list-bullet">
-                <li>تطوير الأفكار والمبادرات وتحويلها إلى خطط قابلة للتنفيذ.</li>
-                <li>تنسيق مراحل تنفيذ المشاريع الريادية.</li>
-                <li>متابعة تقدم المشاريع وإعداد التقارير.</li>
-                <li>التواصل مع الفرق والمشاركين والشركاء والمانحين.</li>
-            </ul>
-        </div>
+        </section>
 
-        <div class="project-item">
-            <div class="project-title">3. التخطيط ومتابعة المشاريع — We&You</div>
-            <div class="project-meta">
-                <span><i class="fas fa-user-tie"></i> Executive Director – Planning & Monitoring</span>
-                <span><i class="fas fa-calendar-alt"></i> سبتمبر 2021 – ديسمبر 2023</span>
+        <!-- 📁 PROJECTS SECTION -->
+        <section id="projects">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-folder-open"></i> الأعمال والمشاريع</h2>
             </div>
-            <ul class="list-bullet">
-                <li>إعداد خطط وجداول تنفيذ المشاريع.</li>
-                <li>الإشراف على تقدم المشاريع.</li>
-                <li>متابعة الموارد البشرية والمادية.</li>
-                <li>ضمان تحقيق الأهداف الاستراتيجية.</li>
-            </ul>
-        </div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div>
+                        <span class="project-badge">يناير 2022 – مستمر</span>
+                        <h3>1. تنسيق مشاريع مؤسسة شِيم</h3>
+                        <p class="project-role">Project Coordinator</p>
+                        <ul class="project-list">
+                            <li>تنسيق ومتابعة تنفيذ الأنشطة والمشاريع.</li>
+                            <li>إعداد المراسلات والتقارير.</li>
+                            <li>متابعة سير العمل وضمان إنجاز المهام في الوقت المحدد.</li>
+                            <li>تنظيم وثائق المشاريع والعقود والتقارير.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div>
+                        <span class="project-badge">مايو 2023 – ديسمبر 2025</span>
+                        <h3>2. تطوير وتنسيق المشاريع الريادية</h3>
+                        <p class="project-role">Future Foundation — Entrepreneurial Project Coordinator and Developer
+                        </p>
+                        <ul class="project-list">
+                            <li>تطوير الأفكار والمبادرات وتحويلها إلى خطط قابلة للتنفيذ.</li>
+                            <li>تنسيق مراحل تنفيذ المشاريع الريادية.</li>
+                            <li>متابعة تقدم المشاريع وإعداد التقارير.</li>
+                            <li>التواصل مع الفرق والمشاركين والشركاء والمانحين.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div>
+                        <span class="project-badge">سبتمبر 2021 – ديسمبر 2023</span>
+                        <h3>3. التخطيط ومتابعة المشاريع</h3>
+                        <p class="project-role">We&You — Executive Director & Officer for Planning and Project
+                            Monitoring</p>
+                        <ul class="project-list">
+                            <li>إعداد خطط وجداول تنفيذ المشاريع.</li>
+                            <li>الإشراف على تقدم المشاريع.</li>
+                            <li>متابعة الموارد البشرية والمادية.</li>
+                            <li>ضمان تحقيق الأهداف الاستراتيجية.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 📬 CONTACT SECTION -->
+        <section id="contact">
+            <div class="contact-card">
+                <h2 style="color: #fff; font-size: 1.8rem;">تواصل معي — Contact</h2>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">يمكنك التواصل المباشر عبر الوسائل التالية:</p>
+
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:ameerjorf70@gmail.com">ameerjorf70@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/970592974006" target="_blank">0592974006</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Palestine – Gaza – Khan Yunis</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 
-    <!-- ========== CONTACT ========== -->
-    <div class="section" id="contact">
-        <div class="section-title"><i class="fas fa-envelope-open-text"></i> التواصل — Contact</div>
-        <div class="contact-grid">
-            <span class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:ameerjorf70@gmail.com">ameerjorf70@gmail.com</a></span>
-            <span class="contact-item"><i class="fab fa-whatsapp"></i> <a href="tel:+970592974006">0592974006</a></span>
-            <span class="contact-item"><i class="fas fa-phone-alt"></i> <a href="tel:+970592974006">+970 59 297 4006</a></span>
-            <span class="contact-item"><i class="fas fa-map-pin"></i> فلسطين – غزة – خان يونس</span>
-        </div>
-    </div>
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 - Ameer Al Jorf</p>
+    </footer>
 
-    <!-- footer -->
-    <div class="footer-note">
-        <i class="fas fa-crown"></i> Ameer Al Jorf · 2026 · تصميم فاخر
-    </div>
-
-</div>
 </body>
+
 </html>
